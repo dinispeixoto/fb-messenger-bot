@@ -43,7 +43,9 @@ def webhook():
                     send_message(sender_id, "roger that! " + sender_id)
 
                 if messaging_event.get("delivery"):  # delivery confirmation
-                    pass
+                    
+                    sender_id = messaging_event["sender"]["id"]
+                    send_message(sender_id, "Confirmed delivery!")
 
                 if messaging_event.get("optin"):  # optin confirmation
                     pass
